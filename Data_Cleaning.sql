@@ -36,9 +36,9 @@ FROM layoffs_staging;
 -- it looks like these are all legitimate entries and shouldn't be deleted. We need to really look at every single row to be accurate
         
                                                     -- NOTE: PARTITION BY groups rows based on matching values across multiple columns.
-												    --    ROW_NUMBER() is a Window function that assigns a unique number to each row within its group.
-                                                    --   row_num > 1 filters out the original and returns only duplicate entries.
-WITH duplicate_cte AS                                --   CTE (WITH): Temporary result set that can be referred to later. It only exists during the execution of the query.
+						    --  ROW_NUMBER() is a Window function that assigns a unique number to each row within its group.
+                                                    --  row_num > 1 filters out the original and returns only duplicate entries.
+WITH duplicate_cte AS                               --  CTE (WITH): Temporary result set that can be referred to later. It only exists during the execution of the query.
 (                                                    
 SELECT * ,                                            
 ROW_NUMBER() OVER(
