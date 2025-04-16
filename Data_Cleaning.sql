@@ -50,7 +50,7 @@ SELECT *
 FROM duplicate_cte
 WHERE row_num>1;
 
--- let's just look at Csaper to confirm
+-- let's just look at Casper to confirm
 SELECT * 
 FROM layoffs_staging
 WHERE company = 'Casper';
